@@ -1,34 +1,32 @@
 # Trivyo Solutions
 
-Independent freelance software studio of Ravikumar Tamilmani: QA, web application development, workflow automation, and agent setup.
+Professional company website for software development, quality engineering, workflow automation, and AI agent services.
 
-**Website:** https://ravitamil.github.io/trivyo-solutions/
+Production domain: https://trivyo.in/
 
-## Run locally
+## Local review
 
-Requires Node.js 24 and npm.
+This redesign is on the local `codex/trivyo-redesign` branch. It has not been pushed or published. Release only after the owner approves the local preview.
 
 ```sh
 npm ci
 npm run dev
+npm run build
+npm run preview
 ```
 
-Open the displayed URL with `/trivyo-solutions/` appended. `npm run build` creates `dist/`; `npm run preview` previews that build.
+Requires Node.js 24. Open the URL printed by the local server. GitHub Pages deployment is configured on `main`; `public/CNAME` preserves the custom domain.
 
-## Contents
+## Design and interactions
 
-- `index.html`: service copy, founder details, contact links, and search metadata.
-- `src/style.css`: responsive design, self-hosted typography, and reduced-motion styles.
-- `src/main.js`: accessible navigation, service accordion, and interactive Three.js sculpture.
-- `public/`: favicon, actual QA project screenshot, licensed font, robots, and sitemap.
-- `.github/workflows/pages.yml`: automatic GitHub Pages publishing on pushes to `main`.
+One fixed Three.js canvas renders behind the company page. An original parametric ribbon surface uses GPU morph targets, reflective materials, and environment lighting. Scroll selects shapes and compositions; pointer movement adds parallax, and dragging changes orientation. The motion button controls ambient animation. Reduced-motion preferences stop ambient movement and switch forms immediately. Rendering pauses while the document is hidden. Pixel density and mobile geometry complexity are capped; resources are disposed on teardown.
 
-The Three.js artwork supports service transformations, dragging, pause/resume, reduced-motion preferences, and a static fallback when WebGL is unavailable. It pauses rendering when outside the viewport or the tab is hidden. Contact links open an email client or LinkedIn; there is no contact backend or tracking.
+No models, images, code, textures, branding, or text from the reference website were copied. The page does not embed test execution reports or redirect visitors to a founder portfolio or GitHub project. Contact links open an email client or LinkedIn; no enquiry backend or analytics was added.
 
-The email address is from the founder's connected GitHub profile. The featured Quality Lab screenshot is genuine public project evidence. No clients, testimonials, performance claims, prices, or additional team members are invented. AI assisted the implementation.
+- `index.html`: company content, navigation, contact links, and metadata.
+- `src/style.css`: typography, responsive layout, foreground/background composition, and legal page styles.
+- `src/main.js`: navigation and service accordion behavior.
+- `src/background.js`: original full-viewport Three.js scene.
+- `privacy.html`, `terms.html`: existing legal content.
 
-## Custom domain later
-
-After purchasing a domain, configure **Settings → Pages → Custom domain**, add the DNS records required by GitHub, enable HTTPS, update the Vite base to `/`, and replace the canonical, Open Graph, structured data, robots, and sitemap URLs.
-
-Space Grotesk is distributed under the SIL Open Font License; see `public/fonts/OFL.txt`. Three.js is MIT licensed.
+Space Grotesk is self-hosted under the SIL Open Font License; see `public/fonts/OFL.txt`. Three.js is MIT licensed. AI assisted the implementation.
