@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ravitamil.github.io/trivyo-solutions/sitemap.xml
