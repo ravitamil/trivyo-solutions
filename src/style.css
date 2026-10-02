@@ -894,6 +894,35 @@ footer {
   letter-spacing: 3px;
 }
 
+.footer-meta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-legal {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-legal a {
+  color: var(--muted);
+  font-size: 12px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.footer-legal a:hover {
+  color: var(--paper);
+}
+
+.footer-legal span {
+  color: var(--line-bright);
+}
+
 /* -------------------------------------------
    RESPONSIVE MEDIA QUERIES
 ------------------------------------------- */
