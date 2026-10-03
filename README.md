@@ -6,7 +6,7 @@ Production domain: https://trivyo.in/
 
 ## Local review
 
-This redesign is on `codex/trivyo-scroll-experience`. The branch is pushed for review; production and `main` remain unchanged. Release only after the owner approves the local preview.
+The owner approved this redesign after local review, and it is merged into `main`. Pushes to `main` publish through the GitHub Pages workflow. The design history is also available on `codex/trivyo-scroll-experience`.
 
 ```sh
 npm ci
