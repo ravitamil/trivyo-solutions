@@ -1,12 +1,12 @@
 # Trivyo Solutions
 
-Professional company website for software development, quality engineering, workflow automation, and AI agent services.
+Company website for AI enablement, custom software, and quality engineering for small and medium businesses.
 
 Production domain: https://trivyo.in/
 
 ## Local review
 
-The owner approved this redesign after local review, and it is merged into `main`. Pushes to `main` publish through the GitHub Pages workflow. The design history is also available on `codex/trivyo-scroll-experience`.
+Requires Node.js 24.
 
 ```sh
 npm ci
@@ -15,24 +15,16 @@ npm run build
 npm run preview
 ```
 
-Requires Node.js 24. Open the URL printed by the local server. GitHub Pages deployment is configured on `main`; `public/CNAME` preserves the custom domain.
+Open the address printed by the local server. Pushes to main publish through GitHub Pages. The custom domain is configured in public/CNAME.
 
-## Design and interactions
+## Site
 
-One fixed Three.js canvas renders an original architectural lowercase “t” behind the company page. Its 48 instanced structural members separate into four service layers, connected frames, and delivery steps. The full-page “Moving parts. Working systems.” sequence continuously interpolates these arrangements with native scroll; reversing scroll reverses the construction. Perspective, position, and depth also follow the narrative. Pointer movement and bounded dragging add subtle viewpoint control. Opening a service highlights its layer.
+- index.html contains the homepage, scroll-driven workflow story, FAQs, and project brief.
+- src/site.css contains shared styles and responsive layouts.
+- src/site.js handles GSAP typography and scroll animations, workflow stage navigation, service enquiry selection, and the email brief.
+- public/brand contains the Forward flow vector logo and mark variants.
+- privacy.html and terms.html contain legal pages.
 
-The motion button disables interpolation and pointer effects, showing each composition immediately. Reduced-motion preferences also shorten the scroll sequence into one ordinary section. Rendering is demand-driven and stops when idle or hidden. Pixel density is capped, geometry is shared across instances, and GPU resources and listeners are disposed on teardown. If WebGL cannot initialize or its context is lost, the company content and navigation stay available against the static background.
+The workflow story illustrates the service approach without customer records or claimed performance results. The project brief opens the visitor’s email app and provides a clipboard fallback. There is no form backend. All content remains readable without JavaScript, and direct email contact remains available.
 
-No models, images, code, textures, branding, or text from the reference website were copied. The page does not embed test execution reports or redirect visitors to a founder portfolio or GitHub project. Contact links open an email client or LinkedIn; no enquiry backend or analytics was added.
-
-- `index.html`: company content, navigation, contact links, and metadata.
-- `src/style.css`: typography, responsive layout, foreground/background composition, and legal page styles.
-- `src/main.js`: navigation and service accordion behavior.
-- `src/background.js`: original full-viewport Three.js scene.
-- `privacy.html`, `terms.html`: existing legal content.
-
-Space Grotesk is self-hosted under the SIL Open Font License; see `public/fonts/OFL.txt`. Three.js is MIT licensed. AI assisted the implementation.
-
-## Reference study
-
-Live wheel and pointer interactions were inspected, alongside canvas runtime markers, rather than relying on screenshots alone. [Lusion](https://lusion.co/) demonstrated spatial composition and a canvas marked `three.js r158`; [0110 Studio](https://www.0110studio.ca/) demonstrated an integrated background marked `three.js r169`. The earlier [Shape of Intelligence](https://shapeofintelligence.com/) study informed damped input and readability. These are references for interaction principles; Trivyo's geometry, layout, words, palette, and scroll arrangements are original. The scene uses no external models or textures.
+The site respects reduced-motion preferences. Manrope and Source Sans 3 are self-hosted under the SIL Open Font License. Their licence files are in public/fonts.
